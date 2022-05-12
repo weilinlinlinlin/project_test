@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <button id="get">发起get请求</button>
+    <button id="post">发起post请求</button>
+    <button id="ajax">发起ajax请求</button>
+    
+    <script>
+        // 利用jquery发送get请求
+        // $(function(){
+        //     $("#get").on("click", function(){
+        //         $.get("http://www.liulongbin.top:3006/api/getbooks",function(data){
+        //             console.log(data)
+        //         })
+        //     })
+        // })
+
+        // 利用jquery发送post请求
+        // $(function(){
+        //     $("#post").on("click", function(){
+        //         $.post("http://www.liulongbin.top:3006/api/addbook",{bookname:'从入门到跑路',author:'魏林林',publisher:'NUAA出版社'},function(data){
+        //             console.log(data)
+        //         })
+        //     })
+        // })
+
+         // 利用jquery发送ajax请求
+        $(function(){
+            $("#ajax").on("click", function(){
+                $.ajax({
+                    type:'GET', 
+                    url:'http://www.liulongbin.top:3006/api/getbooks', 
+                    data:{id:1},
+                    success:function(res){
+                        console.log(res)
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>
